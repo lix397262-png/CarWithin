@@ -18,9 +18,10 @@ jobs:
       - name: Archive to unsigned IPA
         run: |
           xcodebuild archive \
+          -project CarWithin.xcodeproj \
           -scheme CarWithin \
+          -destination generic/platform=iOS \
           -archivePath ./CarWithin.xcarchive \
-          -sdk iphoneos \
           -configuration Release \
           CODE_SIGN_IDENTITY="" \
           CODE_SIGNING_REQUIRED=NO \
